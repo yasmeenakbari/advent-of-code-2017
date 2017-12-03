@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class CaptchaSolverPart1 {
 
-	public static int Solve(String numSequence){
+	public static int solve(String numSequence){
 		int sumMatchingDigits, curDigit, nextDigit;
 		String[] digits;
 		
@@ -42,7 +42,7 @@ public class CaptchaSolverPart1 {
 			String numberString;
 			
 			while((numberString = reader.readLine()) != null){
-				solution = Solve(numberString);
+				solution = solve(numberString);
 				System.out.println(solution);
 			}
 			
