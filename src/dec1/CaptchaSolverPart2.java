@@ -1,30 +1,24 @@
-package Dec1;
+package dec1;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CaptchaSolverPart1 {
-
+public class CaptchaSolverPart2 {
+	
 	public static int solve(String numSequence){
-		int sumMatchingDigits, curDigit, nextDigit;
+		int sumMatchingDigits, curDigit, nextDigit, numSteps;
 		String[] digits;
 		
 		sumMatchingDigits = 0;
 		digits = numSequence.split("");
+		numSteps = digits.length/2;
 		
 		for (int i = 0; i < digits.length; i++){
 			curDigit = Integer.parseInt(digits[i]);
-			
-			if (i+1 < digits.length){		
-				nextDigit = Integer.parseInt(digits[i+1]);				
-			}
-			else{
-				//compare last against the first
-				nextDigit = Integer.parseInt(digits[0]);
-			}
-			
+			nextDigit = Integer.parseInt(digits[(i + numSteps) % digits.length]);
+				
 			if (curDigit == nextDigit){
 				sumMatchingDigits += curDigit;
 			}
