@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
-public class PassphraseValidator {
+public class PassphraseValidatorPart1 {
 	
 	private static boolean isValid(String passphrase) {
 		String[] words = passphrase.split(" ");
